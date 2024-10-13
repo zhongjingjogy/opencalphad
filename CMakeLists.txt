@@ -72,15 +72,15 @@ set(OC_SOURCES
 )
 
 # Create the OC executable
-add_executable(OC ${OC_SOURCES})
-target_link_libraries(OC oc_essentials ${LAPACK_LIBRARIES} ${OPENMP_Fortran_LIBRARIES})
+add_executable(oc6p ${OC_SOURCES})
+target_link_libraries(oc6p oc_essentials ${LAPACK_LIBRARIES} ${OPENMP_Fortran_LIBRARIES})
 
 if(WITH_C_BINDINGS)
     add_subdirectory(OCisoCbinding)
 endif()
 
 # Install libraries
-install(TARGETS OC RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS oc6p RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 install(TARGETS oc_essentials ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
