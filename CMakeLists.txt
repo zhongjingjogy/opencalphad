@@ -18,14 +18,13 @@ option(WITH_C_BINDINGS "Export C Bindings" ON)
 option(WITH_OC_EXAMPLES "Building Examples" ON)
 
 # Define source directories
-set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
+set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(MODELS_DIR "${SRC_DIR}/models")
 set(NUMLIB_DIR "${SRC_DIR}/numlib")
 set(STEPMAP_DIR "${SRC_DIR}/stepmapplot")
 set(UTILITIES_DIR "${SRC_DIR}/utilities")
 set(MINIMIZER_DIR "${SRC_DIR}/minimizer")
 set(USERIF_DIR "${SRC_DIR}/userif")
-set(OCISOCBINDING_DIR "${CMAKE_SOURCE_DIR}/OCisoCbinding")
 
 # Add sources for libOC library
 set(LIBOC_SOURCES
@@ -89,7 +88,7 @@ if(NOT WITH_LAPACK)
 endif()
 
 # Install extra files
-install(FILES ${OCISOCBINDING_DIR}/octqc.h DESTINATION share/include)
+install(FILES ${CMAKE_SOURCE_DIR}/OCisoCbinding/octqc.h DESTINATION share/include)
 
 # Install documentation
 install(FILES
